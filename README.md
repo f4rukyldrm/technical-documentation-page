@@ -1,5 +1,5 @@
 # Technical Documentation Page
-One Of The FreeCodeCamp Responsive Web Design Certificate Project
+One Of The FreeCodeCamp Responsive Web Design Certificate Projects
 
 ## User Stories:
 1. You can see a main element with a corresponding id="main-doc", which contains the page's main content (technical documentation)
