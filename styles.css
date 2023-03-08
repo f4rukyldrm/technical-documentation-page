@@ -1,0 +1,265 @@
+* {
+    scroll-behavior: smooth;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: #eee;
+    scroll-margin: -1px;
+}
+
+main section:first-child {
+    scroll-margin: 50px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-corner {
+    background: #2C2E43;
+}
+
+::-webkit-scrollbar-track {
+    background: #2C2E43;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #595260;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #B2B1B9;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #2C2E43;
+}
+
+
+/* nav */
+nav {
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #595260;
+    letter-spacing: .5px;
+}
+
+nav header {
+    text-align: center;
+    height: 75px;
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #595260;
+    color: #fff;
+}
+
+
+
+nav header svg {
+    fill: #F7E018;
+    width: 50px;
+    height: 50px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    height: calc(100% - 75px);
+    overflow: auto;
+    list-style: none;
+}
+
+nav li {
+    min-height: 50px;
+    width: 100%;
+    padding-left: 25px;
+    font-size: 17px;
+    position: relative;
+    left: 0;
+    transition: .3s ease-out;
+}
+
+nav li::before {
+    content: '';
+    width: 4px;
+    height: 70%;
+    background-color: #F7E018;
+    position: absolute;
+    top: 15%;
+    transform: translateX(-50px);
+    transition: .3s ease-out;
+}
+
+nav li a {
+    display: block;
+    min-height: 50px;
+    width: 100%;
+    line-height: 1.1;
+    padding: 16.5px 0;
+}
+
+
+nav li:hover::before {
+    transform: translateX(-15px);
+}
+
+nav li:hover {
+    padding-left: 35px;
+}
+
+nav li a:hover {
+    color: #B2B1B9;
+}
+
+
+/* main */
+main {
+    position: absolute;
+    width: 75%;
+    top: 0;
+    right: 0;
+    padding: 50px 50px 50px 100px;
+}
+
+section:first-child {
+    padding-top: 0;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section {
+    padding: 50px 0;
+    border-bottom: 1px solid #595260;
+}
+
+main header {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+main p,
+main li {
+    letter-spacing: .75px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-size: 16px;
+    page-break-inside: auto;
+}
+
+main li {
+    margin-top: 10px;
+}
+
+main code {
+    display: block;
+    padding: 20px;
+    background-color: #595260;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+section[id='Reference'] li a {
+    color: steelblue;
+}
+
+section[id='Reference'] li a:hover {
+    color: #595260;
+}
+
+@media (max-width:1050px) {
+
+    * {
+        scroll-margin: 170px;
+    }
+
+    main section:first-child {
+        scroll-margin: 250px;
+    }
+
+    nav {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        letter-spacing: .5px;
+        border: none;
+        z-index: 1;
+        background-color: #2C2E43;
+    }
+
+    nav header {
+        width: 100%;
+    }
+
+    nav ul {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow-y: hidden;
+    }
+
+    nav li {
+        width: 200px;
+        height: inherit;
+        border-right: 1px solid #595260;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    nav li a {
+        width: 200px;
+        height: inherit;
+        padding: 33px 10px;
+    }
+
+    nav li::before {
+        content: '';
+        height: 4px;
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        transform: translateY(150px);
+        transition: .3s ease-out;
+    }
+
+    nav li:hover {
+        padding-left: 0;
+    }
+
+    nav li:hover::before {
+        transform: translateY(65px);
+    }
+
+    main {
+        position: absolute;
+        width: 100%;
+        top: 200px;
+        right: 0;
+        padding: 50px 25px 50px 25px;
+    }
+
+    main code {
+        word-wrap: break-word;
+    }
+}
